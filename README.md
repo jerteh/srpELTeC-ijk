@@ -1,4 +1,4 @@
-# srpELTeCijk
+# srpELTeC-ijk
 Serbian ELTeC ijekavijen collection
 
 
