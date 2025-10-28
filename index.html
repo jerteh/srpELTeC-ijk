@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Moja stranica</title>
+  <meta name="description" content="Lepa, čista i brza lična stranica za GitHub Pages." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f19; --fg:#e9eefb; --muted:#b0b8d1; --card:#12182a; --accent:#7aa2ff; --accent-2:#c084fc;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif; background:radial-gradient(1200px 600px at 80% -10%,rgba(122,162,255,.12),transparent),linear-gradient(180deg,#0b0f19 0%,#0f162d 100%); color:var(--fg);}
+    a{color:var(--accent); text-decoration:none}
+    a:hover{opacity:.9; text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;position:sticky;top:0;background:linear-gradient(to bottom, rgba(11,15,25,.85), rgba(11,15,25,.4));backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid rgba(255,255,255,.06);}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;font-weight:800;color:white;box-shadow:0 10px 25px rgba(122,162,255,.25)}
+    nav a{margin:0 10px;color:var(--muted)}
+    nav a.active, nav a:hover{color:var(--fg)}
+    .hero{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center;padding:48px 0}
+    .hero h1{font-size:clamp(28px,4vw,46px);line-height:1.05;margin:0 0 10px;font-weight:800}
+    .hero p{font-size:clamp(16px,1.6vw,18px);color:var(--muted);margin:0 0 20px}
+    .badge{display:inline-flex;gap:8px;align-items:center;background:rgba(122,162,255,.12);border:1px solid rgba(122,162,255,.35);color:var(--accent);padding:8px 12px;border-radius:999px;font-weight:600}
+    .btns{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;background:linear-gradient(135deg,rgba(122,162,255,.2),rgba(192,132,252,.2));border:1px solid rgba(255,255,255,.08);color:var(--fg);font-weight:600}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,.12);color:var(--muted)}
+    .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;transition:.2s;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+    .card:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.16)}
+    .card h3{margin:6px 0;font-size:18px}
+    .pill{display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.14);color:var(--muted);font-size:12px}
+    section{padding:36px 0}
+    .kicker{color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-size:12px}
+    .list{display:grid;gap:14px;margin:0;padding:0}
+    .list li{list-style:none;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px}
+    .footer{margin-top:40px;padding:24px 0;border-top:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:14px}
+    .avatar{width:120px;height:120px;border-radius:24px;background:linear-gradient(135deg,rgba(122,162,255,.25),rgba(192,132,252,.25));border:1px solid rgba(255,255,255,.14)}
+    .hero-blob{aspect-ratio:1/1;border-radius:28px;background:radial-gradient(200px 200px at 80% 20%,rgba(192,132,252,.45),transparent),linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);box-shadow:0 25px 60px rgba(0,0,0,.35);display:grid;place-items:center}
+    .hero-blob p{color:var(--muted);font-size:12px;margin:8px 0 0}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.card-grid{grid-template-columns:1fr 1fr}.container{padding:18px}}
+    @media (max-width:600px){.card-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="container">
+    <div class="brand">
+      <div class="logo">RS</div>
+      <div>
+        <strong>Moje ime</strong><br/>
+        <span style="color:var(--muted);font-size:12px">istraživač · NLP · srpski jezik</span>
+      </div>
+    </div>
+    <nav>
+      <a href="#projekti" class="active">Projekti</a>
+      <a href="#publikacije">Publikacije</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="badge">✨ GitHub Pages spreman</span>
+        <h1>Lepa, brza i jednostavna lična stranica za <span style="background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent">GitHub Pages</span>.</h1>
+        <p>Jedan HTML fajl, bez build alata. Idealno za predstavljanje projekata, publikacija i kontakta. Zamenite tekst svojim sadržajem i objavite za 1–2 minuta.</p>
+        <div class="btns">
+          <a class="btn" href="#projekti">Pogledaj projekte</a>
+          <a class="btn secondary" href="https://github.com/new" target="_blank" rel="noopener">Napravi repozitorijum →</a>
+        </div>
+      </div>
+      <div class="hero-blob">
+        <div style="text-align:center;padding:18px">
+          <img class="avatar" src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="avatar"/>
+          <p>Zamenite avatar i inicijale.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projekti">
+      <div class="kicker">Radovi & projekti</div>
+      <h2 style="margin:6px 0 14px">Izdvojeno</h2>
+      <div class="card-grid">
+        <article class="card">
+          <span class="pill">NLP · Srpski</span>
+          <h3><a href="#">TESLA: Text Embeddings – Serbian Language Applications</a></h3>
+          <p style="color:var(--muted)">Modeli, korpusi i alati za srpski jezik. Linkujte ka repo-u ili radu.</p>
+        </article>
+        <article class="card">
+          <span class="pill">OntoLex-Lemon</span>
+          <h3><a href="#">SrWordNet / Leximirka</a></h3>
+          <p style="color:var(--muted)">Leksičke baze i povezivanje sa Wikidatom / LLOD standardima.</p>
+        </article>
+        <article class="card">
+          <span class="pill">RAG</span>
+          <h3><a href="#">Digitalne Ikone – TEI · NER · NEL · RAG</a></h3>
+          <p style="color:var(--muted)">Od intervjua do upitljivog znanja: pipeline i demo.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="publikacije">
+      <div class="kicker">Publikacije</div>
+      <h2 style="margin:6px 0 14px">Izbor radova</h2>
+      <ul class="list">
+        <li><strong>Naslov rada 1</strong> — Kratki opis; <a href="#">PDF</a> · <a href="#">BibTeX</a></li>
+        <li><strong>Naslov rada 2</strong> — Kratki opis; <a href="#">PDF</a> · <a href="#">Kod</a></li>
+        <li><strong>Naslov rada 3</strong> — Kratki opis; <a href="#">Repo</a></li>
+      </ul>
+    </section>
+
+    <section id="kontakt">
+      <div class="kicker">Kontakt</div>
+      <h2 style="margin:6px 0 14px">Pišite mi</h2>
+      <p>📧 <a href="mailto:ime.prezime@primer.rs">ime.prezime@primer.rs</a> · 🔗 <a href="https://github.com/username" target="_blank" rel="noopener">github.com/username</a> · 📝 <a href="#">CV</a></p>
+    </section>
+
+    <section>
+      <div class="kicker">Kako objaviti</div>
+      <ol class="list" style="counter-reset:step;display:grid;gap:10px">
+        <li>Kreirajte repo naziva <code>username.github.io</code> (zamenite <code>username</code> svojim GitHub korisničkim imenom).</li>
+        <li>Dodajte ovaj fajl kao <code>index.html</code> u koren repozitorijuma i napravite <em>Commit</em>.</li>
+        <li>Otvorite <em>Settings → Pages</em> i proverite da je <em>Source: Deploy from a branch</em>, grana <code>main</code>, folder <code>/ (root)</code>. Sačuvajte.</li>
+        <li>Nakon par trenutaka, vaša stranica će biti dostupna na <code>https://username.github.io</code>.</li>
+      </ol>
+    </section>
+
+    <div class="footer">
+      © <span id="y"></span> Moje ime · Izrađeno za GitHub Pages · <a href="#">Repo</a>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
