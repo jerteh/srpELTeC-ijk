@@ -11,16 +11,16 @@
          да би прочитали текст (приказ може бити различит у различитим веб читачима).</p>
       <table class="catalogue" id="theTable">
          <tr class="label">
-            <th onclick="sortTable(0)">Identifier</th>
-            <th onclick="sortTable(1)">Encoding</th>
-            <th onclick="sortTableNumerically(2)">Pages</th>
-            <th onclick="sortTableNumerically(3)">Words</th>
-            <th onclick="sortTable(4)">(Size)</th>
-            <th onclick="sortTable(5)">Date (Slot)</th>
-            <th onclick="sortTable(6)">Title</th>
-            <th onclick="sortTable(7)">Author</th>
-            <th onclick="sortTable(8)">Sex</th>
-            <th onclick="sortTable(9)">Reprints</th>
+            <th onclick="sortTable(0)">Ознака</th>
+            <th onclick="sortTable(1)">Кодирање</th>
+            <th onclick="sortTableNumerically(2)">Страна</th>
+            <th onclick="sortTableNumerically(3)">Речи</th>
+            <th onclick="sortTable(4)">(Величина)</th>
+            <th onclick="sortTable(5)">Датум (Slot)</th>
+            <th onclick="sortTable(6)">Наслов</th>
+            <th onclick="sortTable(7)">Аутор</th>
+            <th onclick="sortTable(8)">Пол</th>
+            <th onclick="sortTable(9)">Издања</th>
          </tr>
 
          <tr><td><a href='html/SRP1886b.html'>SRP1886b</a><a href='https://raw.githubusercontent.com/jerteh/srpELTeC-ijk/master/level1/SRP1886b_JovoB_StambolSarajevo.xml'><img src='imgs/teiLogo.jpg'></a></td><td></td><td>2232</td><td>2232</td><td>short</td><td>T3</td><td>Из Стамбола у Сарајево : ELTeC-plus издање</td><td>Бесаровић, Јово Х.Н.(????-????)</td><td>M</td><td>low</td></tr>
@@ -57,7 +57,41 @@
 <tr><td><a href='html/SRP1913b.html'>SRP1913b</a><a href='https://raw.githubusercontent.com/jerteh/srpELTeC-ijk/master/level1/SRP1913b_SvetozarC_Divljak.xml'><img src='imgs/teiLogo.jpg'></a></td><td></td><td>84</td><td>25119</td><td>short</td><td>T4</td><td>Дивљак : ELTeC-plus издање</td><td>Ћоровић, Светозар (1875-1919)</td><td>M</td><td>low</td></tr>
 
          
-      </table><script>
+      </table>
+      
+       <h4>Ијекавски романи из колекције srpELTeX</h4>
+      
+       <table class="catalogue" id="theTable">
+         <tr class="label">
+            <th onclick="sortTable(0)">Ознака</th>
+            <th onclick="sortTable(1)">Кодирање</th>
+            <th onclick="sortTableNumerically(2)">Страна</th>
+            <th onclick="sortTableNumerically(3)">Речи</th>
+            <th onclick="sortTable(4)">(Величина)</th>
+            <th onclick="sortTable(5)">Датум (Slot)</th>
+            <th onclick="sortTable(6)">Наслов</th>
+            <th onclick="sortTable(7)">Аутор</th>
+            <th onclick="sortTable(8)">Пол</th>
+            <th onclick="sortTable(9)">Издања</th>
+         </tr>
+         <tr>
+            <td><a href="https://distantreading.github.io/ELTeC/srp/SRP18860.html">SRP18860</a><a href="https://raw.githubusercontent.com/COST-ELTeC/ELTeC-srp/master/level1/SRP18860_MilanDjM_OmerCelebija.xml"><img src="imgs/teiLogo.jpg"></a></td>
+            <td>eltec-1</td>
+            <td>257</td>
+            <td>33284</td>
+            <td>(short) </td>
+            <td>1886 (T3) </td>
+            <td>Омер Челебија </td>
+            <td>Милићевић, Милан Ђ. (1831-1908)</td>
+            <td>M</td>
+            <td>low</td>
+         </tr>
+
+          
+           </table>
+      
+      
+      <script>
                     function sortTable(n) {
                     var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
                     table = document.getElementById("theTable");
