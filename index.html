@@ -165,7 +165,7 @@
     <section class="hero">
       <div>
         <span class="badge">✨ Прва фаза — проширење SrpELTeC+</span>
-        <h1>Дигитализација српског књижевног наслеђа <span style="background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent">ијекавског изговора</span> (1840–1920)</h1>
+        <h1>Дигитализација српског књижевног наслеђа <span style="background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent">ијекавског изговора</span> <br/> (1840–1920)</h1>
         <p>Пројекат има за циљ прикупљање и дигитализацију репрезентативних књижевних дела српског језика ијекавског изговора, као допуну постојећих корпуса и уравнотежено проучавање екавског и ијекавског изговора.</p>
         <div class="btns">
           <a class="btn" href="#корпус">Преглед корпуса</a>
@@ -282,14 +282,15 @@
       <div class="kicker">Подаци</div>
       <h2>Преузимање и структура репозиторијума</h2>
       <div class="card">
-        <p>По објављивању, корпус ће бити доступан под отвореном лиценцом. Прелиминарна структура:</p>
+        <p>Корпус (верзија 1.0):</p>
         <ul class="list">
-          <li><code>data/tei/</code> — TEI P5 датотеке (валидиране)</li>
-          <li><code>data/txt/</code> — нормализовани текстови</li>
+          <li><code>level1/</code> — TEI P5 датотеке (валидиране)  <a href="https://distantreading.github.io/Schema/eltec-1.html">level1</a> анотације (Центар ДХ ФФУИС) </li>
+          <li><code>level1jerteh/</code> — TEI P5 датотеке (валидиране)  <a href="https://distantreading.github.io/Schema/eltec-1.html">level1</a> анотације (ЈеРТех)  </li>
+          <li><code>html/</code> — HTML облик дела </li>
           <li><code>metadata/</code> — CSV/JSON метаподаци (аутор, година, извор, жанр, опсег)</li>
-          <li><code>docs/</code> — упутства, примери, шеме</li>
+          <li><code>level0/</code> — дигитализована дела која нису level1</li>
         </ul>
-        <p class="pill">Лиценца: CC BY-SA 4.0 (предлог)</p>
+        <p class="pill">Лиценца: CC BY-SA 4.0 </p>
       </div>
       <div class="card" style="margin-top:12px">
         <h3 style="margin-top:0">Како цитирати</h3>
@@ -300,7 +301,7 @@
     <section id="контакт">
       <div class="kicker">Контакт</div>
       <h2>Пишите нам</h2>
-      <p>📧 <a href="mailto:info@primer.rs">info@primer.rs</a> · 🔗 <a href="https://github.com/username/ijekavsko-nasledje" target="_blank" rel="noopener">GitHub репозиторијум</a></p>
+      <p>📧 <a href="mailto:dhc@ff.ues.rs.ba">dhc@ff.ues.rs.ba</a> · 🔗 <a href="https://dhc.ff.ues.rs.ba/" target="_blank" rel="noopener">Центар за дигиталну хуманистику Филозофског факултета Универзитета у Источном Сарајеву</a></p>
     </section>
 
     <div class="footer">
