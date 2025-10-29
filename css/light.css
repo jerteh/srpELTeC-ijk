@@ -1,89 +1,110 @@
-/* --- Light theme override for srpELTeC-ijk --- */
+<style>
+  :root{
+    --bg:#ffffff;          /* bela pozadina */
+    --fg:#1f2937;          /* tamno siva (tekst) */
+    --muted:#6b7280;       /* sekundarni tekst */
+    --card:#ffffff;        /* kartice bele */
+    --accent:#0d47a1;      /* tamno plava */
+    --accent2:#1e88e5;     /* svetlija plava */
+    --border:#e5e7eb;      /* svetla ivica */
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{
+    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans",sans-serif;
+    background:var(--bg);
+    color:var(--fg);
+  }
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .container{max-width:1100px;margin:0 auto;padding:24px}
 
-/* Paleta (slična DHC): belo, tamno-sivi tekst, plavi akcenat, svetle ivice */
-:root {
-  --bg: #ffffff;
-  --fg: #1f2937;        /* slate-800 */
-  --muted: #6b7280;     /* gray-500 */
-  --card: #ffffff;
-  --accent: #0d47a1;    /* tamno plava */
-  --accent-2: #1e88e5;  /* svetlija plava */
-  --border: #e5e7eb;    /* gray-200 */
-}
+  /* header svetao, tanka ivica; zadržan sticky i layout */
+  header{
+    position:sticky;top:0;z-index:20;
+    background:#fff;
+    border-bottom:1px solid var(--border);
+    backdrop-filter:none;
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0}
+  .brand{display:flex;gap:12px;align-items:center}
 
-/* Globalno: skini tamne gradijente i daj belo */
-html, body {
-  background: var(--bg) !important;
-  color: var(--fg) !important;
-}
+  /* logo ostaje gradijent, ali plavi */
+  .logo{
+    width:38px;height:38px;border-radius:12px;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    display:grid;place-items:center;color:white;font-weight:800;
+    box-shadow:0 6px 14px rgba(13,71,161,.18);
+  }
 
-/* Header: bel, sa diskretnom donjom ivicom */
-header {
-  background: #ffffff !important;
-  border-bottom: 1px solid var(--border) !important;
-  backdrop-filter: none !important;
-}
+  nav a{margin:0 8px;color:var(--muted)}
+  nav a:hover, nav a.active{color:var(--accent)}
 
-/* Brand / logo “tableta”: zadrži gradijent, ali plav */
-.logo {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2)) !important;
-  box-shadow: 0 6px 14px rgba(13, 71, 161, .18) !important;
-}
+  .hero{display:grid;grid-template-columns:1.25fr 1fr;gap:28px;align-items:center;padding:44px 0}
+  .hero h1{margin:0 0 10px;font-size:clamp(28px,4.2vw,48px);line-height:1.05;font-weight:800}
+  .hero p{margin:0 0 18px;color:var(--muted);font-size:clamp(16px,1.6vw,18px)}
 
-/* Navigacija: linkovi diskretno sivi/aktivni plavi */
-nav a { color: var(--muted) !important; }
-nav a.active, nav a:hover { color: var(--accent) !important; text-decoration: none; }
+  .badge{
+    display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:999px;
+    border:1px solid var(--border); background:#f9fafb; color:var(--muted); font-weight:600;
+  }
 
-/* Hero sekcija: bez “dark blob”-a, lagana svetla ploha */
-.hero-blob {
-  background: #f8fafc !important;    /* skoro belo */
-  border: 1px solid var(--border) !important;
-  box-shadow: none !important;
-}
+  .btns{display:flex;gap:10px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;padding:12px 14px;border-radius:12px;
+    background:linear-gradient(135deg,rgba(30,136,229,.08),rgba(13,71,161,.08));
+    border:1px solid var(--border); color:var(--fg); font-weight:600;
+  }
+  .btn.secondary{
+    background:#fff; border:1px solid var(--border); color:var(--muted);
+  }
 
-/* Dugmad: svetle varijante */
-.btn {
-  background: linear-gradient(135deg, rgba(30,136,229,.08), rgba(13,71,161,.08)) !important;
-  border: 1px solid var(--border) !important;
-  color: var(--fg) !important;
-}
-.btn.secondary {
-  background: #ffffff !important;
-  border: 1px solid var(--border) !important;
-  color: var(--muted) !important;
-}
-.btn:hover { opacity: .95; }
+  section{padding:32px 0}
+  .kicker{color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-size:12px}
+  h2{margin:6px 0 12px}
 
-/* Kartice: bele sa svetlom ivicom i blagom senkom */
-.card {
-  background: #ffffff !important;
-  border: 1px solid var(--border) !important;
-  box-shadow: 0 1px 2px rgba(0,0,0,.06) !important;
-}
+  /* kartice bele sa suptilnom senkom i svetlom ivicom */
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:18px;
+    box-shadow:0 1px 2px rgba(0,0,0,.06);
+  }
 
-/* Oznake / “pill” / badge */
-.pill, .badge {
-  border: 1px solid var(--border) !important;
-  background: #f9fafb !important;
-  color: var(--muted) !important;
-}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 
-/* Kicker (sekundarni nadnaslov) */
-.kicker { color: var(--muted) !important; }
+  .list{margin:0;padding:0;display:grid;gap:10px}
+  .list li{
+    list-style:none;padding:10px;
+    border:1px solid var(--border);
+    border-radius:12px;background:#fff;
+  }
 
-/* Linkovi u tekstu */
-a { color: var(--accent) !important; }
-a:hover { opacity: .9; text-decoration: underline; }
+  .pill{
+    display:inline-block;padding:4px 10px;border-radius:999px;
+    border:1px solid var(--border); color:var(--muted); font-size:12px;
+    background:#f9fafb;
+  }
 
-/* Footer: bel sa svetlom ivicom i sivim tekstom */
-.footer {
-  background: #ffffff !important;
-  border-top: 1px solid var(--border) !important;
-  color: var(--muted) !important;
-}
+  .footer{
+    margin-top:28px;padding:20px 0;border-top:1px solid var(--border);
+    color:var(--muted);font-size:14px;background:#fff;
+  }
 
-/* Tabele/liste da imaju iste svetle ivice */
-.list li {
-  border: 1px solid var(--border) !important;
-  background: #ffffff !important;
-}
+  .stat{display:flex;align-items:baseline;gap:8px}
+  .stat b{font-size:28px}
+
+  @media (max-width:960px){
+    .hero{grid-template-columns:1fr}
+    .grid-2{grid-template-columns:1fr}
+    .grid-3{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:600px){.grid-3{grid-template-columns:1fr}}
+
+  code{
+    background:#f3f4f6; /* svetlo siva */
+    padding:2px 6px;border-radius:6px;border:1px solid var(--border);
+  }
+</style>
