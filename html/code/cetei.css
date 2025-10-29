@@ -15,7 +15,7 @@ img {
 
 tei-teiHeader:after {
  display: block;
- content: 'ELTeC is a scholarly resource created in the context of COST Action CA16204 “Distant Reading for European Literary History" (https://www.distant-reading.net/)';
+ content: 'srpELTeC-ijk је настао у оквиру пројекта "Дигитализација српског књижевног наслеђа ијекавског изговора (1840–1920)" према узору на ресурсе развијене у оквиру COST акције CA16204 “Distant Reading for European Literary History" (https://www.distant-reading.net/)';
  font-size: 14pt;
  margin-top: 50px;
 }
