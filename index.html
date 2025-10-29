@@ -9,42 +9,128 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
  <style>
-  :root{--bg:#ffffff;--fg:#1f2937;--muted:#6b7280;--card:#ffffff;--accent:#0d47a1;--accent2:#1e88e5}
+  :root{
+    --bg:#ffffff; --fg:#1f2937; --muted:#6b7280; --card:#ffffff;
+    --accent:#0d47a1; --accent2:#1e88e5;
+
+    /* Pastel paleta za naglaske */
+    --pastel-blue:#e8f0ff;     /* svetlo plava za okvire */
+    --pastel-lav:#ede9fe;      /* lavanda (h1 pozadina/underline) */
+    --pastel-mint:#e6fffa;     /* mint (h2 pozadina/underline) */
+    --pastel-rose:#ffeef3;     /* nežno roze (h3 pozadina/underline) */
+    --border:#dfe6f3;          /* blago pastelna ivica */
+  }
   *{box-sizing:border-box}
   html,body{margin:0;height:100%}
-  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans",sans-serif;background:var(--bg);color:var(--fg)}
+  body{
+    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans",sans-serif;
+    background:var(--bg); color:var(--fg)
+  }
   a{color:var(--accent);text-decoration:none}
   a:hover{text-decoration:underline}
   .container{max-width:1100px;margin:0 auto;padding:24px}
-  header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);backdrop-filter:none;border-bottom:1px solid rgba(0,0,0,.08)}
+
+  header{
+    position:sticky;top:0;z-index:20;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:none;
+    border-bottom:1px solid var(--border)
+  }
   .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0}
   .brand{display:flex;gap:12px;align-items:center}
-  .logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;color:white;font-weight:800;box-shadow:0 6px 14px rgba(13,71,161,.18)}
+  .logo{
+    width:38px;height:38px;border-radius:12px;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    display:grid;place-items:center;color:white;font-weight:800;
+    box-shadow:0 6px 14px rgba(13,71,161,.18)
+  }
   nav a{margin:0 8px;color:var(--muted)}
   nav a:hover, nav a.active{color:var(--accent)}
+
   .hero{display:grid;grid-template-columns:1.25fr 1fr;gap:28px;align-items:center;padding:44px 0}
-  .hero h1{margin:0 0 10px;font-size:clamp(28px,4.2vw,48px);line-height:1.05;font-weight:800}
+  .hero h1{
+    margin:0 0 10px;font-size:clamp(28px,4.2vw,48px);line-height:1.05;font-weight:800;
+    color:#3d3a6b; /* tamnija lavanda za tekst */
+    background-image:linear-gradient( to right, var(--pastel-lav), transparent 60% );
+    background-repeat:no-repeat; background-size:100% .55em; background-position:0 88%;
+  }
   .hero p{margin:0 0 18px;color:var(--muted);font-size:clamp(16px,1.6vw,18px)}
-  .badge{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:999px;border:1px solid rgba(0,0,0,.08);background:#f9fafb;color:var(--muted);font-weight:600}
+
+  /* Pastelni heading naglasci */
+  h2{
+    margin:6px 0 12px; color:#274060;
+    background-image:linear-gradient( to right, var(--pastel-mint), transparent 60% );
+    background-repeat:no-repeat; background-size:100% .45em; background-position:0 92%;
+    padding-bottom:2px;
+  }
+  h3{
+    color:#5c2d3a;
+    background-image:linear-gradient( to right, var(--pastel-rose), transparent 60% );
+    background-repeat:no-repeat; background-size:100% .40em; background-position:0 92%;
+    padding-bottom:1px;
+  }
+
+  .badge{
+    display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:999px;
+    border:1px solid var(--border); background:#f9fafb; color:var(--muted); font-weight:600
+  }
+
   .btns{display:flex;gap:10px;flex-wrap:wrap}
-  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 14px;border-radius:12px;background:linear-gradient(135deg,rgba(30,136,229,.08),rgba(13,71,161,.08));border:1px solid rgba(0,0,0,.08);color:var(--fg);font-weight:600}
-  .btn.secondary{background:transparent;border:1px solid rgba(0,0,0,.10);color:var(--muted)}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;padding:12px 14px;border-radius:12px;
+    background:linear-gradient(135deg,rgba(30,136,229,.08),rgba(13,71,161,.08));
+    border:1px solid var(--border); color:var(--fg); font-weight:600
+  }
+  .btn.secondary{background:#fff;border:1px solid var(--border);color:var(--muted)}
+
   section{padding:32px 0}
   .kicker{color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-size:12px}
-  h2{margin:6px 0 12px}
-  .card{background:var(--card);border:1px solid rgba(0,0,0,.10);border-radius:16px;padding:18px;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:18px;
+    box-shadow:0 1px 2px rgba(0,0,0,.05)
+  }
+
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+
   .list{margin:0;padding:0;display:grid;gap:10px}
-  .list li{list-style:none;padding:10px;border:1px solid rgba(0,0,0,.08);border-radius:12px;background:#ffffff}
-  .pill{display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid rgba(0,0,0,.12);color:var(--muted);font-size:12px;background:#f3f4f6}
-  .footer{margin-top:28px;padding:20px 0;border-top:1px solid rgba(0,0,0,.08);color:var(--muted);font-size:14px}
+  .list li{
+    list-style:none;padding:10px;
+    border:1px solid var(--border);
+    border-radius:12px;background:#fff
+  }
+
+  .pill{
+    display:inline-block;padding:4px 10px;border-radius:999px;
+    border:1px solid var(--border); color:var(--muted); font-size:12px;
+    background:var(--pastel-blue)
+  }
+
+  .footer{
+    margin-top:28px;padding:20px 0;border-top:1px solid var(--border);
+    color:var(--muted);font-size:14px;background:#fff
+  }
+
   .stat{display:flex;align-items:baseline;gap:8px}
   .stat b{font-size:28px}
-  @media (max-width:960px){.hero{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr 1fr}}
+
+  @media (max-width:960px){
+    .hero{grid-template-columns:1fr}
+    .grid-2{grid-template-columns:1fr}
+    .grid-3{grid-template-columns:1fr 1fr}
+  }
   @media (max-width:600px){.grid-3{grid-template-columns:1fr}}
-  code{background:#f3f4f6;padding:2px 6px;border-radius:6px;border:1px solid rgba(0,0,0,.08)}
+
+  code{
+    background:#f3f6fb;
+    padding:2px 6px;border-radius:6px;border:1px solid var(--border)
+  }
 </style>
+
 
 </head>
 <body>
