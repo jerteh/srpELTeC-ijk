@@ -1,0 +1,89 @@
+/* --- Light theme override for srpELTeC-ijk --- */
+
+/* Paleta (slična DHC): belo, tamno-sivi tekst, plavi akcenat, svetle ivice */
+:root {
+  --bg: #ffffff;
+  --fg: #1f2937;        /* slate-800 */
+  --muted: #6b7280;     /* gray-500 */
+  --card: #ffffff;
+  --accent: #0d47a1;    /* tamno plava */
+  --accent-2: #1e88e5;  /* svetlija plava */
+  --border: #e5e7eb;    /* gray-200 */
+}
+
+/* Globalno: skini tamne gradijente i daj belo */
+html, body {
+  background: var(--bg) !important;
+  color: var(--fg) !important;
+}
+
+/* Header: bel, sa diskretnom donjom ivicom */
+header {
+  background: #ffffff !important;
+  border-bottom: 1px solid var(--border) !important;
+  backdrop-filter: none !important;
+}
+
+/* Brand / logo “tableta”: zadrži gradijent, ali plav */
+.logo {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2)) !important;
+  box-shadow: 0 6px 14px rgba(13, 71, 161, .18) !important;
+}
+
+/* Navigacija: linkovi diskretno sivi/aktivni plavi */
+nav a { color: var(--muted) !important; }
+nav a.active, nav a:hover { color: var(--accent) !important; text-decoration: none; }
+
+/* Hero sekcija: bez “dark blob”-a, lagana svetla ploha */
+.hero-blob {
+  background: #f8fafc !important;    /* skoro belo */
+  border: 1px solid var(--border) !important;
+  box-shadow: none !important;
+}
+
+/* Dugmad: svetle varijante */
+.btn {
+  background: linear-gradient(135deg, rgba(30,136,229,.08), rgba(13,71,161,.08)) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--fg) !important;
+}
+.btn.secondary {
+  background: #ffffff !important;
+  border: 1px solid var(--border) !important;
+  color: var(--muted) !important;
+}
+.btn:hover { opacity: .95; }
+
+/* Kartice: bele sa svetlom ivicom i blagom senkom */
+.card {
+  background: #ffffff !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,.06) !important;
+}
+
+/* Oznake / “pill” / badge */
+.pill, .badge {
+  border: 1px solid var(--border) !important;
+  background: #f9fafb !important;
+  color: var(--muted) !important;
+}
+
+/* Kicker (sekundarni nadnaslov) */
+.kicker { color: var(--muted) !important; }
+
+/* Linkovi u tekstu */
+a { color: var(--accent) !important; }
+a:hover { opacity: .9; text-decoration: underline; }
+
+/* Footer: bel sa svetlom ivicom i sivim tekstom */
+.footer {
+  background: #ffffff !important;
+  border-top: 1px solid var(--border) !important;
+  color: var(--muted) !important;
+}
+
+/* Tabele/liste da imaju iste svetle ivice */
+.list li {
+  border: 1px solid var(--border) !important;
+  background: #ffffff !important;
+}
