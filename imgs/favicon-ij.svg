@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <style>
+      .bg{ fill:#0b1f3a; }            /* тегет (navy) */
+      .txt{ fill:#93c5fd; font: 800 72px Inter, Arial, sans-serif; }  /* светлоплава */
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="128" height="128" rx="24" ry="24"/>
+  <text class="txt" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">ИЈ</text>
+</svg>
