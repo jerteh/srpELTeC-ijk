@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>ELTeC TEI – SRP1888a_MarkoC_Venecija.xml</title>
+    <link rel="stylesheet" href="code/cetei.css" media="all" />
+    <script src="code/CETEI.js"></script>
+    <script>
+     let c = new CETEI();
+     let behaviors = {
+      "namespaces": {
+       "el": "http://distantreading.net/eltec/ns"
+      },
+      "tei": {
+       "teiHeader": null,
+       "distributor":[[ "[ref]",[ "<a href='$rw@ref' target='_blank'>", "</a>"]]],
+       "author":[[ "[ref]",[ "<a href='$rw@ref' target='_blank'>", "</a>"]]],
+       "pb":[ "<p class='break'>[page $@n]</p>"],
+       "ref": ["<a href='$rw@target'> ↠ </a>"],
+      },
+    };
+    c.addBehaviors(behaviors);
+    c.getHTML5("https://raw.githubusercontent.com/jerteh/srpELTeC-ijk/main/level1/SRP1888a_MarkoC_Venecija.xml", function(data) {
+      document.getElementsByTagName("body")[0].appendChild(data);
+    });
+    </script>
+  </head>
+  <body>
+      <a href="https://dhc.ff.ues.rs.ba/">
+         <img src="../imgs/ff-logo-.png"  width="60" alt="logo"/>
+      </a>
+  </body>
+</html>
